@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'poke'; 
+    src: url(Pokemon_Solid.ttf) format('truetype');
+  }
+
+
+  .custom-font {
+    font-family: 'poke', sans-serif;
+    color: rgb(255, 0, 0);
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+   -1px  1px 0 #000,
+    1px  1px 0 #000;  
+   }
+
+   
+
+/* _______________________________________________ container petites photos + Grosse photo ____________________________________ */
+
+.container2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/* _________________________________________________ section petite photo ______________________________________________________ */
+
+.photo {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  max-height: 80vh;
+  height: 40%;
+  width: 40%;
+  gap: 10px;
+  border: 3px solid black;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+img {
+  width: calc(31.33% - 10px); 
+  margin: 5px;
+  box-sizing: border-box;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.photo img:hover {
+  transform: scale(1.05); 
+  transition: transform 0.3s ease-in-out; 
+}
+
+
+/* _____________________________________________________ section Grosse photo + descriptif ____________________________________ */
+
+.grossephoto {
+  margin-top: 20px;
+  margin-left: 20px;
+  box-sizing: border-box;
+  border: 2px solid rgb(0, 0, 0);
+  height: 80vh; 
+  width: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.grossephoto img {
+  width: 100%;
+  max-width: 600px; 
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+
+/* _______________________________________________________ Bricolage pour le responsive ____________________________________ */
+
+@media (max-width: 768px) {
+  .photo {
+      height: auto;
+      max-height: none;
+      width: 100%;
+  }
+
+  .photo img {
+      width: calc(48% - 10px);
+  }
+
+  .grossephoto {
+      height: auto;
+      width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .container2 {
+      flex-direction: column;
+  }
+
+  .photo {
+      height: 20vh; 
+      max-height: 20vh;
+  }
+
+  .photo img {
+      width: calc(48% - 10px); 
+  }
+
+  .grossephoto {
+      margin-top: 10px;
+      margin-left: 0;
+  }
+}
